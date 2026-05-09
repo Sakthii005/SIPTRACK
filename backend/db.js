@@ -6,6 +6,7 @@ const path = require('path');
 async function initializeDatabase() {
   const connection = await mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
+    port: process.env.DB_PORT || 3306,
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || 'Sakthi@05',
     multipleStatements: true
@@ -20,6 +21,7 @@ async function initializeDatabase() {
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT || 3306,
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || 'Sakthi@05',
   database: process.env.DB_NAME || 'sipcot_db',
