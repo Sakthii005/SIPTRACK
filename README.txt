@@ -1,8 +1,3 @@
-For Backend:
-     cd backend 
-     npm install
-     npm run dev (or) node server.js
-    
-For Frontend:
-     npm install
-     npm run dev
+SIPTRACK is a centralized web-based application developed for managing and monitoring industrial data across SIPCOT industrial parks. The system automates data submission, verification, reporting, and performance monitoring using role-based access control. It also integrates AI and Machine Learning features such as anomaly detection, forecasting, and industry classification for intelligent decision-making. This project consists of a React.js frontend and a Node.js + Express.js backend for managing SIPCOT industrial data efficiently.
+
+For running the project, first set up the backend by navigating to the backend folder, installing the dependencies using npm install, and starting the server using npm run dev or node server.js. Then, set up the frontend by installing the dependencies using npm install and starting the development server using npm run dev.
