@@ -1,7 +1,6 @@
--- Create the database
-CREATE DATABASE IF NOT EXISTS sipcot_db;
+-- Database initialization
+-- (Tables will be created in the database specified in the connection pool)
 
-USE sipcot_db;
 
 -- Users table
 CREATE TABLE IF NOT EXISTS users (
