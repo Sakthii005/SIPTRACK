@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export async function apiGet<T>(endpoint: string): Promise<T> {
   const res = await fetch(`${API_BASE}${endpoint}`);
@@ -37,4 +37,14 @@ export async function apiPostWithFile<T>(endpoint: string, data: Record<string, 
 export async function apiDelete(endpoint: string): Promise<void> {
   const res = await fetch(`${API_BASE}${endpoint}`, { method: 'DELETE' });
   if (!res.ok) throw new Error(await res.text());
+}
+
+export async function apiPut<T>(endpoint: string, data: Record<string, unknown>): Promise<T> {
+  const res = await fetch(`${API_BASE}${endpoint}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
 }
